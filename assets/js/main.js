@@ -348,6 +348,10 @@ function validateMessage(){
 // Submit Validation
 function validateForm(){
   if(!validateName() || !validateEmail() || !validateFormSubject() || !validateMessage()){
+    !validateName() ? validateName(): true;
+    !validateEmail() ? validateEmail(): true;
+    !validateFormSubject() ? validateFormSubject(): true;
+    !validateMessage() ? validateMessage(): true;
     submitError.style.display ='block';
     submitError.innerHTML='Please fix the above error to submit';
     setTimeout(function(){
